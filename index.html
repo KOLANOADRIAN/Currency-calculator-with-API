@@ -20,42 +20,39 @@
 
 <body>
     <div class="container">
-        <a href="http://api.nbp.pl/#kursyWalut">Kursy walut pobtane ze strony NBP</a>
+        <a href="http://api.nbp.pl/#kursyWalut">Kursy walut pobrane ze strony NBP</a>
         <h1 class="container__caption">Calculator Exchange</h1>
-        <form class="form">
-            <fieldset class="form__filsed">
-                <input type="radio" > KUP <input type="radio">Sprzedaj
-                <br>
-                Wybież walutę fiat 
-                <select>
-                    <option></option>
-                    <option>EUR</option>
-                    <option>USD</option>
-                </select>
-                Podaj kwotę <input type="number">
-                <br>
-                Otrzymasz <input type="number">
+        <form>
+            <h2>Sprawdz obecny średni kurs NBP</h2>
+            <h3>Wybierz walutę </h3>
+            <select name="CheckCodeCountry">
+                <option value="EUR">EUR</option>
+                <option value="USD">USD</option>
+                <option value="GBP">GBP</option>
+                <option value="JUP">JUP</option>
+            </select>
+            <button class="button">Pokaż średni kurs</button>
+            <input class="" type="number">
+        </form>
+        <br>
+        <form>
+            <input type="radio"> KUP <input type="radio">SPRZEDAJ
+            <br>
+            <select name="TradeCodeCountry">
+                <option value="EUR">EUR</option>
+                <option value="USD">USD</option>
+                <option value="GBP">GBP</option>
+                <option value="JUP">JUP</option>
+            </select>
+            Podaj kwotę <input type="number">
+            <br>
+             <button>Przelicz</button>
+            Otrzymasz <input type="number">
             </fieldset>
         </form>
-        <table class="table">
-            <tr class="table__tr">
-                <th class="table__th" scope="col">Waluta</th>
-                <th class="table__th" scope="col">Kupno </th>
-                <th class="table__th" scope="col">Sprzedaż</th>
-            </tr>
-            <tr class="table__tr">
-                <td class="table__td">EUR</td>
-                <td class="table__td">123</td>
-                <td class="table__td">321</td>
-            </tr>
-            <tr class="table__tr">
-                <td class="table__td">USD</td>
-                <td class="table__td">123</td>
-                <td class="table__td">321</td>
-            </tr>
-            
-        </table>
+
         <footer class="footer">&copy; Adrian Kolano 2020. </footer>
     </div>
 </body>
+
 </html>
