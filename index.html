@@ -22,19 +22,21 @@
     <div class="container">
         <a href="http://api.nbp.pl/#kursyWalut">Kursy walut pobrane ze strony NBP</a>
         <h1 class="container__caption">Calculator Exchange</h1>
-        <form>
+        <form class="form__check">
             <h2>Sprawdz obecny średni kurs NBP</h2>
             <h3>Wybierz walutę </h3>
             <select name="CheckCodeCountry">
                 <option value="EUR">EUR</option>
                 <option value="USD">USD</option>
                 <option value="GBP">GBP</option>
-                <option value="JUP">JUP</option>
             </select>
             <button class="button">Pokaż średni kurs</button>
-            <input class="" type="number">
+            <span class="result__checkt">
+
+            </span>
         </form>
         <br>
+        <h4>Spread w odniesieniu dośredniego kursu NBP wynosi 0.20 pln</h4>
         <form>
             <input type="radio"> KUP <input type="radio">SPRZEDAJ
             <br>
@@ -42,16 +44,20 @@
                 <option value="EUR">EUR</option>
                 <option value="USD">USD</option>
                 <option value="GBP">GBP</option>
-                <option value="JUP">JUP</option>
             </select>
             Podaj kwotę <input type="number">
             <br>
+            <select name="ResultCodeCountry">
+                <option value="EUR">EUR</option>
+                <option value="USD">USD</option>
+                <option value="GBP">GBP</option>
+            </select>
              <button>Przelicz</button>
             Otrzymasz <input type="number">
             </fieldset>
         </form>
 
-        <footer class="footer">&copy; Adrian Kolano 2020. </footer>
+        <footer class="footer">&copy; Adrian Kolano 2021. </footer>
     </div>
 </body>
 
