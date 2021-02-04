@@ -7,9 +7,9 @@ welcome();
 // http://api.nbp.pl/api/exchangerates/rates/{table}/{code}/today/  
 const getAPI = (event) => {
     event.preventDefault();
-    const result__checkt = document.querySelector(".result__checkt")
-    const CheckCodeCountry = document.querySelector('[name = "CheckCodeCountry"]').value;
-    const url = `http://api.nbp.pl/api/exchangerates/rates/A/${CheckCodeCountry}/today`
+    const result__check = document.querySelector(".result__check")
+    const check__CodeCountry = document.querySelector('[name = "check__CodeCountry"]').value;
+    const url = `http://api.nbp.pl/api/exchangerates/rates/A/${check__CodeCountry}/today`
     fetch(url)
         .then((answer) => {
             console.log(answer)
@@ -24,13 +24,13 @@ const getAPI = (event) => {
             const resultApi = json;
             console.log(resultApi)
             console.log(resultApi.rates[0].mid)
-            fiatPrice = resultApi.rates[0].mid;
-            result__checkt.innerHTML = `Wybrana przez ciebie waluta: ${CheckCodeCountry} Obecny kurs = ${fiatPrice}`
+            fiat__price = resultApi.rates[0].mid;
+            result__check.innerHTML = `Kurs = ${fiat__price} ${check__CodeCountry}`
            
 
         })
         .catch((error) => console.log(error, "błąd"))
         }
 
-const button = document.querySelector(".button")
+const button = document.querySelector(".check__button")
     button.addEventListener("click", getAPI)

@@ -16,6 +16,7 @@
     <link rel="stylesheet" type="text/css" href="./table.css">
 
     <script defer src="./script1.js"></script>
+    <script defer src="./script2.js"></script>
 </head>
 
 <body>
@@ -25,35 +26,33 @@
         <form class="form__check">
             <h2>Sprawdz obecny średni kurs NBP</h2>
             <h3>Wybierz walutę </h3>
-            <select name="CheckCodeCountry">
+            <select class="form__checkSelect" name="check__CodeCountry">
                 <option value="EUR">EUR</option>
                 <option value="USD">USD</option>
                 <option value="GBP">GBP</option>
             </select>
-            <button class="button">Pokaż średni kurs</button>
-            <span class="result__checkt">
-
-            </span>
+            <button class="check__button">Sprawdz kurs</button>
+            <span class="result__check"></span>
         </form>
         <br>
-        <h4>Spread w odniesieniu dośredniego kursu NBP wynosi 0.20 pln</h4>
-        <form>
-            <input type="radio"> KUP <input type="radio">SPRZEDAJ
+        <h4>Spread w odniesieniu do średniego kursu NBP wynosi 0.20 pln</h4>
+        <form class="form__trade">
+            <input class="trade__buy" type="radio"> KUP <input class="trade__sell" type="radio">SPRZEDAJ
             <br>
-            <select name="TradeCodeCountry">
+            <select class="form__tradeSelect" name="trade__CodeCountry">
                 <option value="EUR">EUR</option>
                 <option value="USD">USD</option>
                 <option value="GBP">GBP</option>
             </select>
-            Podaj kwotę <input type="number">
+            Podaj kwotę <input class="form__inputFiat" class="" type="number">
             <br>
-            <select name="ResultCodeCountry">
+            <select class="form__resultSelect" name="result__CodeCountry">
                 <option value="EUR">EUR</option>
                 <option value="USD">USD</option>
                 <option value="GBP">GBP</option>
             </select>
-             <button>Przelicz</button>
-            Otrzymasz <input type="number">
+             <button class="form__tradeButton">Przelicz</button>
+            <span class="form__tradeResult"></span>
             </fieldset>
         </form>
 
