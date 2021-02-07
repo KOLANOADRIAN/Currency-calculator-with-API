@@ -9,7 +9,7 @@ const getAPI = (event) => {
     event.preventDefault();
     const result__check = document.querySelector(".result__check")
     const check__CodeCountry = document.querySelector('[name = "check__CodeCountry"]').value;
-    const url = `http://api.nbp.pl/api/exchangerates/rates/A/${check__CodeCountry}/today`
+    const url = `http://api.nbp.pl/api/exchangerates/rates/A/${check__CodeCountry}/today`;
     fetch(url)
         .then((answer) => {
             console.log(answer)
