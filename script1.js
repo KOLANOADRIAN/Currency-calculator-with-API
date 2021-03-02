@@ -7,7 +7,8 @@ welcome();
 // http://api.nbp.pl/api/exchangerates/rates/{table}/{code}/today/  
 const getAPI = (event) => {
     event.preventDefault();
-    const result__check = document.querySelector(".result__check")
+    
+    const result__check = document.querySelector(".result__check");
     const check__CodeCountry = document.querySelector('[name = "check__CodeCountry"]').value;
     const url = `http://api.nbp.pl/api/exchangerates/rates/A/${check__CodeCountry}/today`;
     fetch(url)
@@ -26,6 +27,7 @@ const getAPI = (event) => {
             console.log(resultApi.rates[0].mid)
             fiat__price = resultApi.rates[0].mid;
             result__check.innerHTML = `Kurs = ${fiat__price} ${check__CodeCountry}`
+           
            
 
         })

@@ -6,6 +6,8 @@ form__trade();
 // https://api.nbp.pl/api/exchangerates/tables/A/ 
 const Trade = (event) => {
     event.preventDefault();
+    const trade__buy = document.querySelector(".trade__buy");
+    const trade__sell = document.querySelector(".trade__sell");
     const form__inputFiat = document.querySelector(".form__inputFiat")
     const form__tradeResult = document.querySelector(".form__tradeResult")
     const trade__CodeCountry = document.querySelector('[name="trade__CodeCountry"]').value;
@@ -29,7 +31,14 @@ const Trade = (event) => {
             const input = form__inputFiat.value;
             let calculate = kurs * input;
             console.log(calculate)
-
+            const spred = 0.50;
+            console.log(spred);
+            const buy = trade__buy.checked;
+            console.log(trade__buy.checked);
+            if (buy === true) {
+                console.log("zaznaczono kup")
+            }
+            
         })
         .catch((error) => console.log(error, "błąd"))
         }
