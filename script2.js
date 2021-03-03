@@ -27,16 +27,19 @@ const Trade = (event) => {
             console.log(tradeApi);
             console.log(tradeApi.rates[0].mid);
             const kurs = tradeApi.rates[0].mid;
-            console.log(form__inputFiat.value);
+            console.log("Ilość do wymiany" + form__inputFiat.value);
             const input = form__inputFiat.value;
-            let calculate = kurs * input;
-            console.log(calculate)
-            const spred = 0.50;
-            console.log(spred);
+            // let calculate = kurs * input;
+            // console.log(calculate)
+            const spred = 0.050;
+            console.log("spred: " + spred);
             const buy = trade__buy.checked;
             console.log(trade__buy.checked);
             if (buy === true) {
                 console.log("zaznaczono kup")
+                let calculate_buy = kurs + spred;
+                let calculate = calculate_buy * input;
+                console.log(calculate);
             }
             
         })
