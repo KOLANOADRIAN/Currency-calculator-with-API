@@ -13,7 +13,7 @@ const Trade = (event) => {
 
     
     const trade__CodeCountry = document.querySelector('[name="trade__CodeCountry"]').value;
-    const result__CodeCountry = document.querySelector('[name="result__CodeCountry"]').value;
+    // const result__CodeCountry = document.querySelector('[name="result__CodeCountry"]').value;
     const url__trade = `http://api.nbp.pl/api/exchangerates/rates/A/${trade__CodeCountry}/`;
     fetch(url__trade)
         .then((answer) => {
@@ -29,7 +29,7 @@ const Trade = (event) => {
             const tradeApi = json;
             console.log(tradeApi);
             console.log(tradeApi.rates[0].mid);
-            const kurs = tradeApi.rates[0].mid;
+            const exchange = tradeApi.rates[0].mid;
             console.log("Ilość do wymiany: " + form__inputFiat.value);
             const input = form__inputFiat.value;
             // let calculate = kurs * input;
@@ -40,7 +40,7 @@ const Trade = (event) => {
             console.log(trade__buy.checked);
             if (buy === true) {
                 console.log("zaznaczono kup")
-                let calculate__buy = kurs + spred;
+                let calculate__buy = exchange + spred;
                 const calculateResultBuy = calculate__buy * input;
                 console.log(`domyślnie przeliczono na walutę Fiat PLN ${calculateResultBuy}`);
             }
@@ -55,6 +55,34 @@ const Trade = (event) => {
             }
         })
         .catch((error) => console.log(error, "błąd"))
+        const result__CodeCountry = document.querySelector('[name="result__CodeCountry"]').value;
+        const url__result = `http://api.nbp.pl/api/exchangerates/rates/A/${result__CodeCountry}/`;
+        fetch(url__result)
+            .then((answer) => {
+                console.log(answer)
+                if (answer.status !== 200) {
+                    throw Error("to nie jest odpowiedz 200")
+                } else {
+                    return answer.json()
+                }
+            })
+            // .then((json) => console.log(json))
+            .then((json) => { 
+                const resultApi = json;
+                console.log(resultApi);
+                console.log(resultApi.rates[0].mid);
+                const onChnange = resultApi.rates[0].mid;
+                console.log("Przelicz na: " + onChnange);
+                // const input = form__inputFiat.value;
+                // // let calculate = kurs * input;
+                // // console.log(calculate)
+                // const spred = 0.050;
+                // console.log("spred: " + spred);
+                // const buy = trade__buy.checked;
+                // console.log(trade__buy.checked);
+               
+            })
+            .catch((error) => console.log(error, "błąd"))
         }
 
 const button = document.querySelector(".form__tradeButton")

@@ -35,27 +35,30 @@
             <span class="result__check"></span>
         </form> -->
         <br>
-        <h4>Spread w odniesieniu do średniego kursu NBP wynosi 0.20 pln</h4>
-        <form class="form__trade">
-            <input class="trade__buy" type="radio"> KUP <input class="trade__sell" type="radio">SPRZEDAJ
-            <br>
-            <select class="form__tradeSelect" name="trade__CodeCountry">
-                <option value="EUR">EUR</option>
-                <option value="USD">USD</option>
-                <option value="GBP">GBP</option>
-            </select>
-            Podaj kwotę <input class="form__inputFiat"  type="number">
-            <br>
-            <select class="form__resultSelect" name="result__CodeCountry">
-                <option value="EUR">EUR</option>
-                <option value="USD">USD</option>
-                <option value="GBP">GBP</option>
-            </select>
-             <button class="form__tradeButton">Przelicz</button>
-            <span class="form__tradeResult"></span>
-            </fieldset>
-        </form>
-
+        <h4>Spread w odniesieniu do średniego kursu NBP wynosi 0.05 pln</h4>
+        <fieldset>
+            <form class="form__trade">
+                <input class="trade__buy" type="radio"> KUP <input class="trade__sell" type="radio">SPRZEDAJ
+                <br>
+                <select class="form__tradeSelect" name="trade__CodeCountry">
+                    <option value="EUR">EUR</option>
+                    <option value="USD">USD</option>
+                    <option value="GBP">GBP</option>
+                </select>
+                Podaj kwotę <input class="form__inputFiat" type="number">
+                <br>
+                <span class="form__tradeResultInPln"></span>
+                <br>
+                <h3>Wybież walutę na jaką chcesz przerobić wybraną wcześniej walutę</h3>
+                <select class="form__resultSelect" name="result__CodeCountry">
+                    <option value="EUR">EUR</option>
+                    <option value="USD">USD</option>
+                    <option value="GBP">GBP</option>
+                </select>
+                <button class="form__tradeButton">Przelicz</button>
+                <span class="form__tradeResult"></span>
+            </form>
+        </fieldset>
         <footer class="footer">&copy; Adrian Kolano 2021. </footer>
     </div>
 </body>
