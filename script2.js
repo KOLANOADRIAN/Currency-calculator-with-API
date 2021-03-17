@@ -73,13 +73,7 @@ const Trade = (event) => {
                 console.log(resultApi.rates[0].mid);
                 const onChnange = resultApi.rates[0].mid;
                 console.log("Przelicz na: " + onChnange);
-                // const input = form__inputFiat.value;
-                // // let calculate = kurs * input;
-                // // console.log(calculate)
-                // const spred = 0.050;
-                // console.log("spred: " + spred);
-                // const buy = trade__buy.checked;
-                // console.log(trade__buy.checked);
+              
                
             })
             .catch((error) => console.log(error, "błąd"))
