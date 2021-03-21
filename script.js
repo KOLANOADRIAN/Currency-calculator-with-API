@@ -11,6 +11,8 @@ const Trade = (event) => {
     const form__inputFiat = document.querySelector(".form__inputFiat")
     const form__tradeResult = document.querySelector(".form__tradeResult")
 
+ 
+
 
     const trade__CodeCountry = document.querySelector('[name="trade__CodeCountry"]').value;
     // const result__CodeCountry = document.querySelector('[name="result__CodeCountry"]').value;
@@ -42,7 +44,8 @@ const Trade = (event) => {
                 console.log("zaznaczono kup")
                 let calculate__buy = exchange + spred;
                 const calculateResultBuy = calculate__buy * input;
-                console.log(`domyślnie przeliczono na walutę Fiat PLN ${calculateResultBuy}`);
+                console.log(`domyślnie przeliczono na walutę Fiat PLN ${calculateResultBuy.toFixed(2)}`);
+                
             }
             const sell = trade__sell.checked;
             console.log(trade__sell.checked);
@@ -50,8 +53,12 @@ const Trade = (event) => {
                 console.log("zaznaczono Sprzedaj")
                 let calculate__sell = kurs - spred;
                 const calculateResultSell = calculate__sell * input;
-                console.log(`domyślnie przeliczono na walutę Fiat PLN ${calculateResultSell}`);
+                console.log(`domyślnie przeliczono na walutę Fiat PLN ${calculateResultSell.toFixed(2)}`);
             }
+            form__tradeResult.innerHTML = (`<span class=""> ${exchange}<span> `)
+            
+           
+           
         })
         .catch((error) => console.log(error, "błąd"))
         
@@ -73,8 +80,11 @@ const Trade = (event) => {
             console.log(resultApi.rates[0].mid);
             const onChnange = resultApi.rates[0].mid;
             console.log("Przelicz na: " + onChnange);
+           
         })
         .catch((error) => console.log(error, "błąd"))
+
+        
 }
 
 const button = document.querySelector(".form__tradeButton")
