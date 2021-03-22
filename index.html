@@ -26,18 +26,26 @@
         <h4>Spread w odniesieniu do średniego kursu NBP wynosi 0.05 pln</h4>
         <fieldset>
             <form class="form__trade">
+                <span class="form__resultExchange"></span>
+                <p>Wybierz: (chcesz kupić czy sprzedać)</p>
                 <input class="trade__buy" type="radio"> KUP <input class="trade__sell" type="radio">SPRZEDAJ
                 <p>w przeliczeniu na PLN*</p>
                 <br>
+                <span class="form__resultBuy formresultSell"></span>
+                <br>
+                <p>wybierz walutę jaką chcesz wymienić</p>
                 <br>
                 <select class="form__tradeSelect" name="trade__CodeCountry">
                     <option value="EUR">EUR</option>
                     <option value="USD">USD</option>
                     <option value="GBP">GBP</option>
                 </select>
-                Podaj kwotę <input class="form__inputFiat" type="number">
                 <br>
-                <span class="form__tradeResultInPln"></span>
+                <span class="form__resultTrade"></span>
+                <br>
+                Podaj kwotę jaką chcesz wymienić: <input class="form__inputFiat" type="number">
+                <br>
+                <span class="form__resultInput"></span>
                 <br>
                 <h3>Przelicz na:</h3>
                 <select class="form__resultSelect" name="result__CodeCountry">
@@ -47,7 +55,7 @@
                 </select>
                 <button class="form__tradeButton">Przelicz</button>
                 <br>
-                <span class="form__tradeResult"></span>
+                <span class="form__resultOnChange"></span>
             </form>
         </fieldset>
         <footer class="footer">&copy; Adrian Kolano 2021. </footer>
