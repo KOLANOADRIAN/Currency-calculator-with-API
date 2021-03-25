@@ -23,15 +23,18 @@
         <a href="http://api.nbp.pl/#kursyWalut">Kursy walut pobrane ze strony NBP</a>
         <h1 class="container__caption">Calculator Exchange</h1>
         <br>
-        <h4>Spread w odniesieniu do średniego kursu NBP wynosi 0.05 pln</h4>
         <fieldset>
             <form class="form__trade">
-                <span class="form__resultExchange"></span>
                 <p>Wybierz: (chcesz kupić czy sprzedać)</p>
-                <input class="trade__buy" type="radio"> KUP <input class="trade__sell" type="radio">SPRZEDAJ
+                <label>
+                    <input type="radio" class="trade__buy" name="choose" value="buy"required>KUP
+                </label>
+                <label>
+                    <input type="radio" class="trade__sell" name="choose" value="sell" >SPRZEDAJ<br>
+                </label>
+                <br>
                 <p>w przeliczeniu na PLN*</p>
                 <br>
-                <span class="form__resultBuy formresultSell"></span>
                 <br>
                 <p>wybierz walutę jaką chcesz wymienić</p>
                 <br>
@@ -45,17 +48,9 @@
                 <br>
                 Podaj kwotę jaką chcesz wymienić: <input class="form__inputFiat" type="number">
                 <br>
-                <span class="form__resultInput"></span>
-                <br>
-                <h3>Przelicz na:</h3>
-                <select class="form__resultSelect" name="result__CodeCountry">
-                    <option value="EUR">EUR</option>
-                    <option value="USD">USD</option>
-                    <option value="GBP">GBP</option>
-                </select>
                 <button class="form__tradeButton">Przelicz</button>
                 <br>
-                <span class="form__resultOnChange"></span>
+                <span class="form__resultBuy formresultSell" span></span>
             </form>
         </fieldset>
         <footer class="footer">&copy; Adrian Kolano 2021. </footer>
