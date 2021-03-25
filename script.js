@@ -1,8 +1,13 @@
 
 const form__trade = () => {
-    console.log("form Trade is conect");
+    console.log("Hello Frond__EndDevelopers")
+    console.log("Form Trade is conect");
 }
 form__trade();
+
+window.addEventListener("load", function () {
+    console.log("Form Trade is Load");
+});
 
 const Trade = (event) => {
     event.preventDefault();
@@ -12,7 +17,7 @@ const Trade = (event) => {
     const form__resultBuy = document.querySelector(".form__resultBuy")
     const form__resultSell = document.querySelector(".formresultSell")
     const form__resultTrade = document.querySelector(".form__resultTrade")
-    const form__resultOnChange = document.querySelector(".form__resultOnChange")
+   
 
     const trade__CodeCountry = document.querySelector('[name="trade__CodeCountry"]').value;
     const url__trade = `http://api.nbp.pl/api/exchangerates/rates/A/${trade__CodeCountry}/`;
@@ -38,13 +43,12 @@ const Trade = (event) => {
             console.log("spred: " + spred);
             form__resultTrade.innerHTML = (`
             <span class="" > Średni kurs NBP waluty ${trade__CodeCountry} w przeliczeniu do PLN: ${exchange} </span><br>
-            <strong> Spred wynosi: ${spred} <strong>
+            <strong> Spred wynosi: ${spred} <strong><br>
             `)
             const buy = trade__buy.checked;
             console.log(trade__buy.checked);
             const sell = trade__sell.checked;
             console.log(trade__sell.checked);
-
 
             if (buy === true) {
                 console.log("zaznaczono kup")
@@ -55,7 +59,6 @@ const Trade = (event) => {
                 <span class=""> Zaznaczono Zakup </span><br>
                 <span class=""> Wprowadzona ilość od wymiany: ${input}</span><br>
                 <span class="" > Domyślnie w przeliczeniu na walutę Fiat PLN otrzymasz: ${calculateResultBuy.toFixed(2)}</span>
-
                 `)
 
             }
@@ -75,7 +78,7 @@ const Trade = (event) => {
         })
         .catch((error) => console.log(error, "błąd"))
 
-   
+
 
 }
 

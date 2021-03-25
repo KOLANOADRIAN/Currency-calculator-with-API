@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:image" content="">
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <meta property="og:image" content="og.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon.png">
     <title>wymiana walut</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -13,39 +13,38 @@
     <link rel="stylesheet" type="text/css" href="./global.css">
     <link rel="stylesheet" type="text/css" href="./container.css">
     <link rel="stylesheet" type="text/css" href="./form.css">
-    <link rel="stylesheet" type="text/css" href="./table.css">
 
     <script defer src="./script.js"></script>
 </head>
-
 <body>
     <div class="container">
-        <a href="http://api.nbp.pl/#kursyWalut">Kursy walut pobrane ze strony NBP</a>
-        <h1 class="container__caption">Calculator Exchange</h1>
+        <h1 class="container__caption">Calculator Exchange Api NBP</h1>
+        <a class="container__link" href="http://api.nbp.pl/#kursyWalut">Kursy walut pobrane ze strony NBP</a>
         <br>
         <form class="form">
-            <p>Wybierz: (chcesz kupić czy sprzedać)</p>
-            <label>
-                <input type="radio" class="trade__buy" name="choose" value="buy" required>KUP
-            </label>
-            <label>
-                <input type="radio" class="trade__sell" name="choose" value="sell">SPRZEDAJ<br>
-            </label>
-            <br>
-            <p>w przeliczeniu na PLN*</p>
-            <p>wybierz walutę jaką chcesz wymienić</p>
-            <select class="form__tradeSelect" name="trade__CodeCountry">
-                <option value="EUR">EUR</option>
-                <option value="USD">USD</option>
-                <option value="GBP">GBP</option>
-            </select>
-            <span class="form__resultTrade"></span>
-            Podaj kwotę jaką chcesz wymienić: <input class="form__inputFiat" type="number">
-            <button class="form__tradeButton">Przelicz</button>
-            <span class="form__resultBuy formresultSell" span></span>
+            <div class="form__cube">
+                <p>Wybierz: (chcesz kupić czy sprzedać)</p>
+                <label>
+                    <input type="radio" class="trade__buy" name="choose" value="buy" required>KUP
+                </label>
+                <label>
+                    <input type="radio" class="trade__sell" name="choose" value="sell">SPRZEDAJ<br>
+                </label>
+                <p>w przeliczeniu na PLN*</p>
+                <p>wybierz walutę jaką chcesz wymienić</p>
+                <select class="form__tradeSelect" name="trade__CodeCountry">
+                    <option value="EUR">EUR</option>
+                    <option value="USD">USD</option>
+                    <option value="GBP">GBP</option>
+                </select>
+                Podaj kwotę jaką chcesz wymienić: <input class="form__inputFiat" type="number">
+                <button class="form__tradeButton">Przelicz</button>
+                <br>
+                <span class="form__resultTrade"></span>
+                <span class="form__resultBuy formresultSell" span></span>
+            </div>
         </form>
     </div>
     <footer class="footer">&copy; Adrian Kolano 2021. </footer>
 </body>
-
 </html>

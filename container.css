@@ -1,5 +1,18 @@
 .container {
-    height: 100vh;
-   
+    height: 91vh;
+    color: rgb(255, 255, 255);
+    background-image: url(./pts.png);
+    background-size: cover;
+    opacity: 0.9;
+}
 
+.container__link {
+    margin-top: 200px;
+    margin-left: 150px;
+    color: teal;
+}
+
+.container__caption {
+  padding-top: 10px;
+  text-align: center;
 }

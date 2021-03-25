@@ -2,4 +2,35 @@
    width: 80%;
    height: 70%;
    box-shadow: 0 0 10px #ccc;
+   margin: 10px auto 10px auto;
+   text-align: center;
+   font-size: 18px;
+}
+@media (max-width:887px) {
+   .form{font-size: 14px;}  
+}
+.form__cube {
+   padding-top: 10px;
+}
+
+.form__resultTrade  {
+   line-height: 2; 
+}
+
+.form__resultBuy {
+  
+   line-height: 2;
+}
+
+.formresultSell {
+   line-height: 2;
+   
+}
+.form__tradeButton {
+   margin-left: 10px;
+   border: none;
+   background-color: thistle;
+}
+.form__tradeButton:hover {
+   background-color: crimson;
 }
