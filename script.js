@@ -30,7 +30,7 @@ const Trade = (event) => {
                 return answer.json()
             }
         })
-        
+
         // .then((json) => console.log(json))
         .then((json) => {
             const tradeApi = json;
@@ -58,8 +58,8 @@ const Trade = (event) => {
                 console.log(`domyślnie przeliczono na walutę Fiat PLN ${calculateResultBuy.toFixed(2)}`);
                 form__resultBuy.innerHTML = (`
                 <span class=""> Zaznaczono Zakup </span><br>
-                <span class=""> Wprowadzona ilość od wymiany: ${input}</span><br>
-                <span class="" > Domyślnie w przeliczeniu na walutę Fiat PLN otrzymasz: ${calculateResultBuy.toFixed(2)}</span>
+                <span class=""> Wprowadzona ilość do wymiany: ${input}</span><br>
+                <span class="" > Domyślnie w przeliczeniu na walutę Fiat PLN otrzymasz: ${calculateResultBuy.toFixed(2)} zł</span>
                 `)
 
             }
