@@ -30,6 +30,7 @@ const Trade = (event) => {
                 return answer.json()
             }
         })
+        
         // .then((json) => console.log(json))
         .then((json) => {
             const tradeApi = json;
