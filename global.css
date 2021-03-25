@@ -5,3 +5,19 @@ html {
 *, ::before, ::after {
     box-sizing: inherit;
 }
+*,
+*::after,
+::before {
+    box-sizing: border-box;
+}
+.body {
+    font-family: 'Lato', sans-serif;
+    line-height: 2;
+   
+}
+
+.footer {
+    background-color: rgba(51, 56, 56, 0.171);
+    position: sticky;
+    bottom: 10px;
+}
