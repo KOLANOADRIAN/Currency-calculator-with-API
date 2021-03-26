@@ -13,10 +13,10 @@ const Trade = (event) => {
     event.preventDefault();
     const trade__buy = document.querySelector(".trade__buy");
     const trade__sell = document.querySelector(".trade__sell");
-    const form__inputFiat = document.querySelector(".form__inputFiat")
-    const form__resultBuy = document.querySelector(".form__resultBuy")
-    const form__resultSell = document.querySelector(".formresultSell")
-    const form__resultTrade = document.querySelector(".form__resultTrade")
+    const form__inputFiat = document.querySelector(".form__inputFiat");
+    const form__resultBuy = document.querySelector(".form__resultBuy");
+    const form__resultSell = document.querySelector(".formresultSell");
+    const form__resultTrade = document.querySelector(".form__resultTrade");
    
 
     const trade__CodeCountry = document.querySelector('[name="trade__CodeCountry"]').value;
