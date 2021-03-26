@@ -5,6 +5,7 @@
    margin: 10px auto 10px auto;
    text-align: center;
    font-size: 18px;
+   background-color: rgba(71, 64, 64, 0.452);
 }
 @media (max-width:887px) {
    .form{font-size: 14px;}  

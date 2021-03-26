@@ -58,8 +58,8 @@ const Trade = (event) => {
                 console.log(`domyślnie przeliczono na walutę Fiat PLN ${calculateResultBuy.toFixed(2)}`);
                 form__resultBuy.innerHTML = (`
                 <span class=""> Zaznaczono Zakup </span><br>
-                <span class=""> Wprowadzona ilość do wymiany: ${input}</span><br>
-                <span class="" > Domyślnie w przeliczeniu na walutę Fiat PLN otrzymasz: ${calculateResultBuy.toFixed(2)} zł</span>
+                <span class=""> Chcesz kupić ${input} ${trade__CodeCountry} po kursie zakupu ${calculate__buy.toFixed(2)} zł</span><br>
+                <span class=""> Całkowity koszt zakupu: ${calculateResultBuy.toFixed(2)} zł</span>
                 `)
 
             }
@@ -70,8 +70,8 @@ const Trade = (event) => {
                 console.log(`domyślnie przeliczono na walutę Fiat PLN ${calculateResultSell.toFixed(2)}`);
                 form__resultSell.innerHTML = (`
                  <span class=""> Zaznaczono Sprzedaż </span><br>
-                 <span class=""> Wprowadzona ilość od wymiany: ${input}</span><br>
-                 <span class="" > Domyślnie w przeliczeniu na walutę Fiat PLN otrzymasz: ${calculateResultSell.toFixed(2)}</span>
+                 <span class=""> Chcesz sprzedać ${input} ${trade__CodeCountry} po kursie sprzedaży ${calculate__sell.toFixed(2)} zł</span><br>
+                 <span class=""> Całkowita kwota po sprzedaży: ${calculateResultSell.toFixed(2)} zł</span>
                
                 `)
 
