@@ -23,58 +23,41 @@ const Trade = (event) => {
     const url__trade = `http://api.nbp.pl/api/exchangerates/rates/A/${trade__CodeCountry}/`;
     fetch(url__trade)
         .then((answer) => {
-            console.log(answer)
             if (answer.status !== 200) {
                 throw Error("to nie jest odpowiedz 200")
             } else {
                 return answer.json()
             }
         })
-
-        // .then((json) => console.log(json))
         .then((json) => {
             const tradeApi = json;
-            console.log(tradeApi);
-            // console.log(tradeApi.rates[0].mid);
             const exchange = tradeApi.rates[0].mid;
-            console.log(exchange)
             const input = form__inputFiat.value;
-            console.log(input)
             const spred = 0.050;
-            console.log("spred: " + spred);
             form__resultTrade.innerHTML = (`
             <span class="" > Średni kurs NBP waluty ${trade__CodeCountry} w przeliczeniu do PLN: ${exchange} </span><br>
             <strong> Spred wynosi: ${spred} <strong><br>
             `)
             const buy = trade__buy.checked;
-            console.log(trade__buy.checked);
             const sell = trade__sell.checked;
-            console.log(trade__sell.checked);
-
             if (buy === true) {
-                console.log("zaznaczono kup")
                 let calculate__buy = exchange + spred;
                 const calculateResultBuy = calculate__buy * input;
-                console.log(`domyślnie przeliczono na walutę Fiat PLN ${calculateResultBuy.toFixed(2)}`);
                 form__resultBuy.innerHTML = (`
                 <span class=""> Zaznaczono Zakup </span><br>
                 <span class=""> Chcesz kupić ${input} ${trade__CodeCountry} po kursie zakupu ${calculate__buy.toFixed(2)} zł</span><br>
                 <span class=""> Całkowity koszt zakupu: ${calculateResultBuy.toFixed(2)} zł</span>
                 `)
-
             }
             else if (sell === true) {
-                console.log("zaznaczono Sprzedaj")
                 let calculate__sell = exchange - spred;
                 const calculateResultSell = calculate__sell * input;
-                console.log(`domyślnie przeliczono na walutę Fiat PLN ${calculateResultSell.toFixed(2)}`);
                 form__resultSell.innerHTML = (`
                  <span class=""> Zaznaczono Sprzedaż </span><br>
                  <span class=""> Chcesz sprzedać ${input} ${trade__CodeCountry} po kursie sprzedaży ${calculate__sell.toFixed(2)} zł</span><br>
                  <span class=""> Całkowita kwota po sprzedaży: ${calculateResultSell.toFixed(2)} zł</span>
                
                 `)
-
             }
         })
         .catch((error) => console.log(error, "błąd"))
