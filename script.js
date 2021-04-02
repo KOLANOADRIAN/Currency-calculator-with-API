@@ -35,11 +35,13 @@ const Trade = (event) => {
             const input = form__inputFiat.value;
             const spred = 0.050;
             form__resultTrade.innerHTML = (`
-            <span class="" > Średni kurs NBP waluty ${trade__CodeCountry} w przeliczeniu do PLN: ${exchange} </span><br>
+            <span class="" > Średni kurs NBP waluty ${trade__CodeCountry} w przeliczeniu do PLN: ${exchange.toFixed(2)} </span><br>
             <strong> Spred wynosi: ${spred} <strong><br>
             `)
             const buy = trade__buy.checked;
+            console.log(buy)
             const sell = trade__sell.checked;
+            console.log(sell)
             if (buy === true) {
                 let calculate__buy = exchange + spred;
                 const calculateResultBuy = calculate__buy * input;
